@@ -30,6 +30,7 @@ plantilla = [
 
 # LISTA DE ENEMIGOS PARA LA RONDA
 ronda = random.randint(1, 5)
+enemigoDerrotado = 0
 if ronda > 1:
     print(f"¡Se acercan {ronda} enemigos!")
 else:
@@ -56,9 +57,15 @@ while heroe.estaVivo() and ronda > 0:
         
     if heroe.estaVivo():
         print(f"{heroe.nombre} ha ganado la batalla")
+        enemigoDerrotado += 1
 
     if oponente.estaVivo():
         print(f"{heroe.nombre} fue derrotado")
+
+if enemigoDerrotado > 1:
+    print(f"{heroe.nombre} derroto a {enemigoDerrotado} enemigos y quedo con {heroe.vida} de vida")
+else:
+    print(f"{heroe.nombre} derroto a {enemigoDerrotado} enemigo y quedo con {heroe.vida} de vida")
 
 # print(heroe)
 # print(Duende)
